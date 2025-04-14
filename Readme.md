@@ -31,7 +31,7 @@ PC-Launcher is a lightweight, customizable desktop application designed to provi
 
 ## 🚀 Installation
 
-1. **1. **Download** the [latest release](https://github.com/PC-Launcher/PC-Launcher/releases/download/v.1.0.0/PC-Launcher.zip) or build from source
+1. **1. **Download** the [latest release](https://github.com/PC-Launcher/PC-Launcher/releases/download/v1.0.0/PC-Launcher.zip) or build from source
 2. **Extract** the ZIP file to a location of your choice
 3. **Configure** the `config.ini` file to set up your preferred streaming services and applications
 4. **Run** `PC-Launcher.exe` to start the application
@@ -498,16 +498,12 @@ Handles input from multiple sources:
 
 ## 🙏 Acknowledgments
 
-This project represents a collaborative effort between human creativity and AI assistance:
+This project was developed with assistance from:
 
-- [Claude by Anthropic](https://claude.ai) - Extensive assistance with code generation, documentation formatting, README structure, feature implementation, and iterative refinement
-- [ChatGPT by OpenAI](https://chat.openai.com) - Development guidance, code generation, and troubleshooting assistance
+- [Claude by Anthropic](https://claude.ai) - Documentation formatting, README structure, and code review
+- [ChatGPT by OpenAI](https://chat.openai.com) - Development guidance and troubleshooting assistance
 
-The project demonstrates how AI tools can help individuals without formal coding experience create functional software through guided, iterative development.
-
-## 👨‍💻 Project Creator
-
-PC-Launcher was created by Jim Cease through an iterative AI-assisted development process.
+These AI assistants provided valuable input during the development process and helped shape the final product.
 
 ## 📜 Credits
 
