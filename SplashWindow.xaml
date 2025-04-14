@@ -1,0 +1,95 @@
+﻿<Window x:Class="PCStreamerLauncher.SplashWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SplashWindow"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Width="960" Height="650"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize">
+    <Grid x:Name="RootGrid" Opacity="0">
+        <!-- Full-Screen Background Image -->
+        <Image Source="Images/PC-Launcher.png"
+               Stretch="UniformToFill"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+
+        <!-- Solid Neon Border Overlay -->
+        <Rectangle x:Name="NeonBorder"
+                   StrokeThickness="8"
+                   Fill="Transparent"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Stretch">
+            <Rectangle.Stroke>
+                <SolidColorBrush x:Name="NeonBrush" Color="#FF0077FF"/>
+            </Rectangle.Stroke>
+            <Rectangle.Effect>
+                <DropShadowEffect x:Name="NeonGlow"
+                                  Color="#FF00FFFF"
+                                  BlurRadius="20"
+                                  ShadowDepth="0"
+                                  Opacity="0.8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <!-- Initializing Text -->
+        <TextBlock x:Name="InitText"
+                   Text="Initializing..."
+                   Foreground="#FF00FFFF"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   Margin="0,0,0,40">
+            <TextBlock.Effect>
+                <DropShadowEffect Color="#FF00FFFF"
+                                  BlurRadius="8"
+                                  ShadowDepth="0"
+                                  Opacity="0.8"/>
+            </TextBlock.Effect>
+        </TextBlock>
+
+        <!-- Animations -->
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="Grid.Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <!-- Animate border color -->
+                        <ColorAnimation Storyboard.TargetName="NeonBrush"
+                                        Storyboard.TargetProperty="Color"
+                                        From="#FF0077FF"
+                                        To="#FF00FFFF"
+                                        Duration="0:0:1.5"
+                                        AutoReverse="True"
+                                        RepeatBehavior="Forever"/>
+
+                        <!-- Animate neon glow's BlurRadius -->
+                        <DoubleAnimation Storyboard.TargetName="NeonGlow"
+                                         Storyboard.TargetProperty="BlurRadius"
+                                         From="20"
+                                         To="40"
+                                         Duration="0:0:1.5"
+                                         AutoReverse="True"
+                                         RepeatBehavior="Forever"/>
+
+                        <!-- Fade-in for whole splash -->
+                        <DoubleAnimation Storyboard.TargetName="RootGrid"
+                                         Storyboard.TargetProperty="Opacity"
+                                         From="0" To="1"
+                                         Duration="0:0:1"/>
+
+                        <!-- Pulsing "Initializing..." text -->
+                        <DoubleAnimation Storyboard.TargetName="InitText"
+                                         Storyboard.TargetProperty="Opacity"
+                                         From="0.4" To="1.0"
+                                         Duration="0:0:1.2"
+                                         AutoReverse="True"
+                                         RepeatBehavior="Forever"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Grid.Triggers>
+    </Grid>
+</Window>
